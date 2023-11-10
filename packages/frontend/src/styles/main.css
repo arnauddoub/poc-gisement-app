@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-family: "Poppins", sans-serif;
-  --font-feature-settings: "cv02","cv03","cv04","cv11";
+  --font-family: 'Poppins', sans-serif;
+  --font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   --surface-a: #ffffff;
   --surface-b: #f9fafb;
   --surface-c: #f3f4f6;
@@ -56,8 +56,8 @@
 }
 
 .dark {
-  --font-family: "Poppins", sans-serif;
-  --font-feature-settings: "cv02","cv03","cv04","cv11";
+  --font-family: 'Poppins', sans-serif;
+  --font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   --surface-a: #0f1522;
   --surface-b: #0d121d;
   --surface-c: rgba(255, 255, 255, 0.03);
@@ -96,8 +96,8 @@
   --surface-section: #0d121d;
   --surface-card: #0f1522;
   --surface-overlay: #0f1522;
-  --surface-border: rgba(255,255,255,.1);
-  --surface-hover: rgba(255,255,255,.03);
+  --surface-border: rgba(255, 255, 255, 0.1);
+  --surface-hover: rgba(255, 255, 255, 0.03);
   --focus-ring: 0 0 0 0.2rem rgba(129, 140, 248, 0.2);
   --maskbg: rgba(0, 0, 0, 0.4);
   --highlight-bg: rgba(129, 140, 248, 0.16);
