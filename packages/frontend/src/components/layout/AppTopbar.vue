@@ -10,7 +10,7 @@ const toggleDark = useToggle(isDark)
 <template>
   <div class="layout-topbar">
     <div class="topbar-start">
-      <Button severity="secondary" text class="topbar-menubutton" rounded style="padding: 1px" @click="onMenuToggle()">
+      <Button severity="secondary" text rounded style="margin-left: -1rem;" @click="onMenuToggle()">
         <i class="pi pi-bars"></i>
       </Button>
     </div>
@@ -40,10 +40,5 @@ const toggleDark = useToggle(isDark)
 .layout-topbar .topbar-start {
   display: flex;
   align-items: center;
-}
-
-.layout-topbar .topbar-start .topbar-menubutton i {
-  font-size: 1.25rem;
-  transition: color 0.2s;
 }
 </style>

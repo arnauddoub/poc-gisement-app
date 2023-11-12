@@ -11,9 +11,9 @@ const links = ref<MenuLink[]>([
   {
     label: 'Immobilier',
     links: [
-      { label: 'Logements', icon: 'pi pi-fw pi-building', to: '/loans' },
-      { label: 'Locataires', icon: 'pi pi-fw pi-id-card', to: '/tenants' },
-      { label: 'Emprunts', icon: 'pi pi-fw pi-euro', to: '/loans' }
+      { label: 'Logements', icon: 'pi pi-fw pi-building', to: '/properties' }
+      // { label: 'Locataires', icon: 'pi pi-fw pi-id-card', to: '/tenants' },
+      // { label: 'Emprunts', icon: 'pi pi-fw pi-euro', to: '/loans' }
     ]
   }
 ])

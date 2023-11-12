@@ -73,7 +73,7 @@ const isActiveMenu = ref(false)
     box-shadow 0.2s;
 
   &.router-link-exact-active {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .layout-menuitem-icon {
