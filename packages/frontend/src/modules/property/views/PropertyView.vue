@@ -13,10 +13,10 @@ const items = ref([{ label: 'Synthèse', icon: 'pi pi-home' }])
   <div class="grid gap-6">
     <div class="flex justify-between items-center">
       <BaseHeading type="h1">{{ property.location.address }} {{ property.location.zipCode }} {{ property.location.city }}</BaseHeading>
-      <Tag severity="info" value="Analyse en cours"></Tag>
+      <Tag severity="info" value="Analyse en cours" />
     </div>
 
-    <div class="grid gap-6 grid-cols-5 card">
+    <div class="grid gap-2 grid-cols-1 card md:gap-6 md:grid-cols-5">
       <BaseValue label="Statut :" :value="property.state" />
       <BaseValue label="Catégorie :" :value="property.category" />
       <BaseValue label="Type :" :value="property.type" />
