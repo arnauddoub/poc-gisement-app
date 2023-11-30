@@ -10,7 +10,7 @@ const toggleDark = useToggle(isDark)
 <template>
   <div class="layout-topbar">
     <div class="topbar-start">
-      <Button severity="secondary" text rounded style="margin-left: -1rem;" @click="onMenuToggle()">
+      <Button severity="secondary" text rounded style="margin-left: -1rem" @click="onMenuToggle()">
         <i class="pi pi-bars"></i>
       </Button>
     </div>

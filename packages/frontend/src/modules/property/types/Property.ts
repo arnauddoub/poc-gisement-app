@@ -4,6 +4,7 @@ export interface Property {
   category: PropertyCategory
   type: PropertyType
   surface: number
+  price: number
   location: {
     address: string
     city: string

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 interface Props {
-  vertical: boolean
+  vertical?: boolean
   label: string
-  value: string
+  value: string | number
 }
 
 withDefaults(defineProps<Props>(), {

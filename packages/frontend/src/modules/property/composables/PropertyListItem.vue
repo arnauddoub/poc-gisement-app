@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Property } from '@/modules/property/types/Property'
+import { RouterLink } from 'vue-router'
 import BaseValue from '@/components/base/BaseValue.vue'
 
 defineProps<{
@@ -8,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="bg-white rounded-md shadow-md p-6 md:h-32 dark:bg-gray-900 dark:text-white">
+  <div class="card md:h-32">
     <div class="h-full relative items-center md:flex md:space-x-6 md:pl-20">
       <div class="max-md:mx-auto max-md:mb-4 -bottom-1 left-0 w-20 md:absolute">
         <img src="@/assets/properties/building.png" class="opacity-70" alt="building" />
@@ -26,7 +27,9 @@ defineProps<{
           <BaseValue label="Type :" :value="property.type" />
         </div>
         <div class="md:w-40">
-          <Button class="w-full justify-center">Détail</Button>
+          <RouterLink :to="{ name: 'properties.show', params: { uuid: property.uuid } }">
+            <Button class="w-full justify-center">Détail</Button>
+          </RouterLink>
         </div>
       </div>
     </div>

@@ -24,6 +24,11 @@ const router = createRouter({
               path: '',
               name: 'properties.list',
               component: () => import('@/modules/property/views/PropertyListView.vue')
+            },
+            {
+              path: ':uuid',
+              name: 'properties.show',
+              component: () => import('@/modules/property/views/PropertyView.vue')
             }
           ]
         }
