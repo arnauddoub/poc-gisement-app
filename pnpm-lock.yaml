@@ -25,6 +25,7 @@ importers:
       prettier: ^3.0.3
       proxy-addr: ^2.0.7
       reflect-metadata: ^0.1.13
+      shared: workspace:^1.0.0
       source-map-support: ^0.5.21
       typescript: ~4.6
       youch: ^3.3.2
@@ -36,6 +37,7 @@ importers:
       pg: 8.11.3
       proxy-addr: 2.0.7
       reflect-metadata: 0.1.13
+      shared: link:../shared
       source-map-support: 0.5.21
     devDependencies:
       '@adonisjs/assembler': 5.9.6_@adonisjs+core@5.9.0
@@ -77,6 +79,7 @@ importers:
       primeicons: ^6.0.1
       primevue: ^3.39.0
       sass: ^1.69.5
+      shared: workspace:^1.0.0
       tailwindcss: ^3.3.5
       typescript: ~5.2.0
       vite: ^4.4.11
@@ -89,6 +92,7 @@ importers:
       pinia: 2.1.7_typescript@5.2.2+vue@3.3.7
       primeicons: 6.0.1
       primevue: 3.39.0_vue@3.3.7
+      shared: link:../shared
       vue: 3.3.7_typescript@5.2.2
       vue-router: 4.2.5_vue@3.3.7
     devDependencies:
