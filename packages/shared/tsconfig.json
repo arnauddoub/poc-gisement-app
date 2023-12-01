@@ -1,0 +1,7 @@
+{
+  "include": ["**/*"],
+  "compilerOptions": {
+    "rootDir": "./",
+    "sourceMap": true
+  }
+}
