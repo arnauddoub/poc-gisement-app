@@ -16,7 +16,6 @@ export default class extends BaseSchema {
       table.enu('type', Object.values(PropertyType)).notNullable()
       table.float('surface').notNullable()
       table.float('price').notNullable()
-      table.integer('location_id').unsigned().references('locations.id')
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
     })
