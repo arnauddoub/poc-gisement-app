@@ -6,4 +6,10 @@ export default class PropertiesController {
     const properties = await Property.query().preload('location')
     return response.ok(properties)
   }
+
+  public async show({ params, response }: HttpContextContract) {
+    const property = await Property.findOrFail(params.id)
+    await property.load('location')
+    return response.ok(property)
+  }
 }

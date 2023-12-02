@@ -24,4 +24,4 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.get('properties', 'PropertiesController.index')
+Route.resource('properties', 'PropertiesController').apiOnly().only(['index', 'show'])
