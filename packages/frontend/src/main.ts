@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { VueQueryPlugin } from '@tanstack/vue-query'
 import { designSystem } from './styles/design-system'
 
 import 'primeicons/primeicons.css'
@@ -17,6 +18,7 @@ import TabMenu from 'primevue/tabmenu'
 
 const app = createApp(App)
 
+app.use(VueQueryPlugin)
 app.use(createPinia())
 app.use(router)
 app.use(PrimeVue, { ripple: true, unstyled: true, pt: designSystem })
