@@ -2,11 +2,12 @@
 interface Props {
   vertical?: boolean
   label: string
-  value: string | number
+  value?: string | number | null
 }
 
 withDefaults(defineProps<Props>(), {
-  vertical: true
+  vertical: true,
+  value: null
 })
 </script>
 

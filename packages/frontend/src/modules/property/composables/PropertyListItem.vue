@@ -27,7 +27,7 @@ defineProps<{
           <BaseValue label="Type :" :value="property.type" />
         </div>
         <div class="md:w-40">
-          <RouterLink :to="{ name: 'properties.show', params: { uuid: property.uuid } }">
+          <RouterLink :to="{ name: 'properties.show', params: { id: property.id } }">
             <Button class="w-full justify-center">Détail</Button>
           </RouterLink>
         </div>

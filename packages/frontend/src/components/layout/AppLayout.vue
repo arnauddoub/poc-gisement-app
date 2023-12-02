@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { RouterView } from 'vue-router'
+import { storeToRefs } from 'pinia'
 import { onClickOutside } from '@vueuse/core'
+import { useLayoutStore } from '@/stores/layout'
 import AppTopbar from './AppTopbar.vue'
 import AppSidebar from './AppSidebar.vue'
-import { useLayoutStore } from '@/stores/layout'
-import { storeToRefs } from 'pinia'
 
 const layoutStore = useLayoutStore()
 const { layout, isSidebarActive } = storeToRefs(layoutStore)

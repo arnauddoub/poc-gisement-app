@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { properties } from '@/modules/property/fakes/properties'
+import usePropertyQuery from '@/modules/property/composables/usePropertyQuery'
 import PropertyListItem from '@/modules/property/composables/PropertyListItem.vue'
 import BaseHeading from '@/components/base/BaseHeading.vue'
+
+const { getProperties } = usePropertyQuery()
+const { data: properties } = getProperties()
 </script>
 
 <template>
@@ -10,6 +13,6 @@ import BaseHeading from '@/components/base/BaseHeading.vue'
     <Button outlined>Ajouter</Button>
   </div>
   <div class="grid gap-8">
-    <PropertyListItem v-for="property in properties" :key="property.uuid" :property="property" />
+    <PropertyListItem v-for="property in properties" :key="property.id" :property="property" />
   </div>
 </template>
