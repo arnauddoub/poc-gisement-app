@@ -1,6 +1,4 @@
 # Gisement (Monorepo VueJS + AdonisJS)
-
-## Description
 Gisement est une application de gestion de patrimoine immobilier
 
 ## Technologies Utilisées
