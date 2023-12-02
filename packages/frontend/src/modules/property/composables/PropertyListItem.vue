@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Property } from 'shared/types/Property'
 import { RouterLink } from 'vue-router'
+import { CATEGORY_LABELS, STATE_LABELS, TYPE_LABELS } from 'shared/constants/PropertyConstant'
 import BaseValue from '@/components/base/BaseValue.vue'
 
 defineProps<{
@@ -16,15 +17,15 @@ defineProps<{
       </div>
       <div class="flex max-md:flex-col flex-1 max-md:space-y-4 justify-between md:items-center">
         <div>
-          <span class="text-sm mb-1 text-gray-400 block">{{ property.category }}</span>
+          <span class="text-sm mb-1 text-gray-400 block">{{ CATEGORY_LABELS[property.category] }}</span>
           <h3 class="font-medium max-w-sm text-lg leading-snug">
             {{ property.location.address }}
             <span class="block">{{ property.location.zipCode }} {{ property.location.city }}</span>
           </h3>
         </div>
         <div class="flex space-x-6">
-          <BaseValue label="Statut :" :value="property.state" />
-          <BaseValue label="Type :" :value="property.type" />
+          <BaseValue label="Statut :" :value="STATE_LABELS[property.state]" />
+          <BaseValue label="Type :" :value="TYPE_LABELS[property.type]" />
         </div>
         <div class="md:w-40">
           <RouterLink :to="{ name: 'properties.show', params: { id: property.id } }">
