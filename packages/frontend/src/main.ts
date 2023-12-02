@@ -15,6 +15,7 @@ import Button from 'primevue/button'
 import Card from 'primevue/card'
 import Tag from 'primevue/tag'
 import TabMenu from 'primevue/tabmenu'
+import ProgressBar from 'primevue/progressbar'
 
 const app = createApp(App)
 
@@ -28,5 +29,6 @@ app.component('Button', Button)
 app.component('Card', Card)
 app.component('Tag', Tag)
 app.component('TabMenu', TabMenu)
+app.component('ProgressBar', ProgressBar)
 
 app.mount('#app')

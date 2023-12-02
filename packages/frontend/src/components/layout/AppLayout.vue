@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { RouterView } from 'vue-router'
+import { useIsFetching } from '@tanstack/vue-query'
 import { storeToRefs } from 'pinia'
 import { onClickOutside } from '@vueuse/core'
 import { useLayoutStore } from '@/stores/layout'
 import AppTopbar from './AppTopbar.vue'
 import AppSidebar from './AppSidebar.vue'
+
+const isFetching = useIsFetching()
 
 const layoutStore = useLayoutStore()
 const { layout, isSidebarActive } = storeToRefs(layoutStore)
@@ -30,6 +33,8 @@ onClickOutside(appSidebarRef, () => {
     <AppSidebar ref="appSidebarRef" />
 
     <div class="layout-content-wrapper">
+      <ProgressBar v-if="isFetching" mode="indeterminate" style="position: absolute; height: 3px; top: 0; left: 0; right: 0" />
+
       <AppTopbar />
 
       <div class="layout-content">
