@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Property } from '@/modules/property/types/Property'
+import type { Property } from 'shared/types/Property'
 import { RouterLink } from 'vue-router'
 import BaseValue from '@/components/base/BaseValue.vue'
 
