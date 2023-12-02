@@ -3,7 +3,7 @@ import Property from 'App/Models/Property'
 
 export default class PropertiesController {
   public async index({ response }: HttpContextContract) {
-    const properties = await Property.query().preload('location')
+    const properties = await Property.query().preload('location').orderBy('created_at', 'desc')
     return response.ok(properties)
   }
 
