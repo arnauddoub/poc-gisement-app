@@ -71,6 +71,7 @@ importers:
       '@vue/test-utils': ^2.4.1
       '@vue/tsconfig': ^0.4.0
       '@vueuse/core': ^10.5.0
+      '@vueuse/router': ^10.6.1
       autoprefixer: ^10.4.16
       eslint: ^8.49.0
       eslint-plugin-vue: ^9.17.0
@@ -93,6 +94,7 @@ importers:
     dependencies:
       '@tanstack/vue-query': 5.12.2_vue@3.3.7
       '@vueuse/core': 10.5.0_vue@3.3.7
+      '@vueuse/router': 10.6.1_vue-router@4.2.5+vue@3.3.7
       pinia: 2.1.7_typescript@5.2.2+vue@3.3.7
       primeicons: 6.0.1
       primevue: 3.39.0_vue@3.3.7
@@ -1800,8 +1802,30 @@ packages:
     resolution: {integrity: sha512-fEbElR+MaIYyCkeM0SzWkdoMtOpIwO72x8WsZHRE7IggiOlILttqttM69AS13nrDxosnDBYdyy3C5mR1LCxHsw==}
     dev: false
 
+  /@vueuse/router/10.6.1_vue-router@4.2.5+vue@3.3.7:
+    resolution: {integrity: sha512-9EMf30SownmxYKC3h36tl8uALSBGFkz3Dc2n+lQgJuyOYPIO/VotzDdkBxuEoHYKaCWw2JQa/S1q+t8NR26PvQ==}
+    peerDependencies:
+      vue-router: '>=4.0.0-rc.1'
+    dependencies:
+      '@vueuse/shared': 10.6.1_vue@3.3.7
+      vue-demi: 0.14.6_vue@3.3.7
+      vue-router: 4.2.5_vue@3.3.7
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
   /@vueuse/shared/10.5.0_vue@3.3.7:
     resolution: {integrity: sha512-18iyxbbHYLst9MqU1X1QNdMHIjks6wC7XTVf0KNOv5es/Ms6gjVFCAAWTVP2JStuGqydg3DT+ExpFORUEi9yhg==}
+    dependencies:
+      vue-demi: 0.14.6_vue@3.3.7
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
+  /@vueuse/shared/10.6.1_vue@3.3.7:
+    resolution: {integrity: sha512-TECVDTIedFlL0NUfHWncf3zF9Gc4VfdxfQc8JFwoVZQmxpONhLxFrlm0eHQeidHj4rdTPL3KXJa0TZCk1wnc5Q==}
     dependencies:
       vue-demi: 0.14.6_vue@3.3.7
     transitivePeerDependencies:
