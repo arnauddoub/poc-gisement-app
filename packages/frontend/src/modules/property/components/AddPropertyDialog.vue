@@ -88,11 +88,26 @@ watch(isSuccess, (value) => {
       </BaseFormItem>
 
       <BaseFormItem for-id="field-price" label="Prix :">
-        <InputNumber v-model="property.price" input-id="field-price" :input-style="{ width: '100%' }" />
+        <InputNumber
+          v-model="property.price"
+          input-id="field-price"
+          mode="currency"
+          currency="EUR"
+          locale="fr-FR"
+          :min-fraction-digits="0"
+          :input-style="{ width: '100%' }"
+        />
       </BaseFormItem>
 
       <BaseFormItem for-id="field-surface" label="Superficie :">
-        <InputNumber v-model="property.surface" input-id="field-surface" :input-style="{ width: '100%' }" />
+        <InputNumber
+          v-model="property.surface"
+          input-id="field-surface"
+          locale="fr-FR"
+          suffix=" m²"
+          :min-fraction-digits="2"
+          :input-style="{ width: '100%' }"
+        />
       </BaseFormItem>
     </div>
 
