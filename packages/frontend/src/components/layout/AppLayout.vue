@@ -33,7 +33,7 @@ onClickOutside(appSidebarRef, () => {
     <AppSidebar ref="appSidebarRef" />
 
     <div class="layout-content-wrapper">
-      <ProgressBar v-if="isFetching" mode="indeterminate" style="position: absolute; height: 3px; top: 0; left: 0; right: 0" />
+      <ProgressBar v-if="isFetching" mode="indeterminate" style="position: absolute; height: 4px; top: 0; left: 0; right: 0" />
 
       <AppTopbar />
 
