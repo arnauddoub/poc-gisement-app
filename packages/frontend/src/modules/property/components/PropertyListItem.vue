@@ -29,7 +29,7 @@ defineProps<{
         </div>
         <div class="md:ml-auto md:w-40">
           <RouterLink :to="{ name: 'properties.show', params: { id: property.id } }">
-            <Button class="w-full justify-center">Détail</Button>
+            <Button class="w-full justify-center" label="Détail" />
           </RouterLink>
         </div>
       </div>

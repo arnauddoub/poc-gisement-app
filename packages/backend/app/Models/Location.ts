@@ -10,6 +10,9 @@ export default class Location extends BaseModel {
   public propertyId: number
 
   @column()
+  public label: string
+
+  @column()
   public address: string
 
   @column()

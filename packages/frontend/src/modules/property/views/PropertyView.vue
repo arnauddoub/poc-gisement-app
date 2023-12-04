@@ -27,7 +27,7 @@ const items = ref([
       <BaseValue label="Statut :" :value="property?.state && STATE_LABELS[property.state]" />
       <BaseValue label="Catégorie :" :value="property?.category && CATEGORY_LABELS[property.category]" />
       <BaseValue label="Type :" :value="property?.type && TYPE_LABELS[property.type]" />
-      <BaseValue label="Surface :" :value="`${property?.surface} m2`" />
+      <BaseValue label="Surface :" :value="`${property?.surface} m²`" />
       <BaseValue label="Prix :" :value="`${property?.price} €`" />
     </div>
 

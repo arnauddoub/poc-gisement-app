@@ -18,6 +18,19 @@ export const designSystem = usePassThrough(
         ],
         style: 'top:2px'
       })
+    },
+    button: {
+      label: ({ props }: any) => ({
+        class: [
+          'flex-1',
+          'duration-200',
+          'font-semibold',
+          {
+            'hover:underline': props.link
+          },
+          { 'invisible w-0': props.label == null }
+        ]
+      })
     }
   },
   {

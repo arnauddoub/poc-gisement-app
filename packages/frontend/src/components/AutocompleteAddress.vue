@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import type { AutoCompleteCompleteEvent } from 'primevue/autocomplete'
-import type { GouvAdress, GouvAddressFormatted } from 'shared/types/externals/GouvAddressesResponse'
+import type { GouvAddress } from 'shared/types/externals/GouvAddressesResponse'
 import type { Location } from 'shared/types/Location'
 import { ref } from 'vue'
 import { useApi } from '@/composables/useApi'
 
 defineProps<{ modelValue: Location | null }>()
-const emit = defineEmits<{ (e: 'update:modelValue', value: GouvAddressFormatted): void }>()
+const emit = defineEmits<{ (e: 'update:modelValue', value: Location): void }>()
 
 const address = ref(null)
-const addresses = ref<GouvAddressFormatted[]>([])
+const addresses = ref<Location[]>([])
 
 async function search({ query }: AutoCompleteCompleteEvent) {
   const param = decodeURIComponent(new URLSearchParams({ query }).toString())
-  const { data } = await useApi(`/locations/autocomplete?${param}`).json<GouvAdress[]>()
+  const { data } = await useApi(`/locations/autocomplete?${param}`).json<GouvAddress[]>()
 
   if (!data.value) return
 

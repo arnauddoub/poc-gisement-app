@@ -1,14 +1,14 @@
 export interface GouvAddressesResponse {
   type: string
   version: string
-  features: GouvAdress[]
+  features: GouvAddress[]
   attribution: string
   licence: string
   query: string
   limit: number
 }
 
-export interface GouvAdress {
+export interface GouvAddress {
   geometry: { coordinates: [number, number] }
   properties: {
     city: string
@@ -26,13 +26,4 @@ export interface GouvAdress {
     x: number
     y: number
   }
-}
-
-export interface GouvAddressFormatted {
-  label: string
-  address: string
-  city: string
-  zipCode: string
-  longitude: number
-  latitude: number
 }
