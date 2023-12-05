@@ -1,5 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Property from '../../Models/Property'
+import PropertyStoreValidator from '../../Validators/PropertyStoreValidator'
 
 export default class PropertiesController {
   public async index({ response }: HttpContextContract) {
@@ -14,7 +15,8 @@ export default class PropertiesController {
   }
 
   public async store({ request, response }: HttpContextContract) {
-    const property = await Property.create(request.all())
+    const payload = await request.validate(PropertyStoreValidator)
+    const property = await Property.create(payload)
     await property.related('location').create(request.body().location)
     return response.created(property)
   }
