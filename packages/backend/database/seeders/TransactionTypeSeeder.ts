@@ -4,12 +4,16 @@ import TransactionType from '../../app/Models/TransactionType'
 export default class extends BaseSeeder {
   public async run() {
     const types = [
+      'Loyer hors charges locatives',
+      'Taxe foncière',
+      'Charges de copropriété',
+      'Charges locataire',
+      'Frais agence',
       'Eau',
       'Energie',
       'Internet',
       'Téléphone',
       'Charges courantes',
-      'Charges de copropriété',
       'Fond de prévoyance',
       'Fond de roulement',
       'Fond Travaux ALUR',
@@ -30,7 +34,6 @@ export default class extends BaseSeeder {
       'Autres charges',
       'Autres honoraires',
       'Dépôt de garantie rendu au locataire',
-      'Documentation',
       'Frais de comptabilité',
       'Frais de diagnostics',
       'Frais de tenue de compte',
@@ -41,18 +44,9 @@ export default class extends BaseSeeder {
       'Commission garantie / de caution (Crédit Logement)',
       'Droits de mutations',
       'Fond mutuel de garantie (Crédit logement)',
-      'Frais agence',
       'Frais de courtage emprunt',
       'Honoraires du notaire',
       'Indemnité commercialité',
-      'Assurance véhicule',
-      'Carburant',
-      'Entretien véhicule',
-      'Hébergement',
-      'Location de véhicule',
-      'Péage / parking',
-      'Restaurant',
-      'Train ou avion',
     ]
 
     await TransactionType.createMany(types.map((type) => ({ name: type })))

@@ -19,6 +19,23 @@ export default class PropertiesController {
     const payload = await request.validate(PropertyStoreValidator)
     const location = await Location.create(payload.location)
     const property = await location.related('property').create(request.body())
+
+    // add default transactions (Loyer, Taxe foncière, Charges de copropriété)
+    await property.related('transactions').createMany([
+      {
+        transactionTypeId: 1,
+        amount: 7200,
+      },
+      {
+        transactionTypeId: 2,
+        amount: -800,
+      },
+      {
+        transactionTypeId: 3,
+        amount: -1000,
+      },
+    ])
+
     return response.created(property)
   }
 }

@@ -13,7 +13,12 @@ export default class extends BaseSchema {
         .notNullable()
       table.string('comment')
       table.float('amount').notNullable()
-      table.integer('property_id').unsigned().references('properties.id').onDelete('CASCADE')
+      table
+        .integer('property_id')
+        .unsigned()
+        .references('properties.id')
+        .notNullable()
+        .onDelete('CASCADE')
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
     })

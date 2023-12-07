@@ -24,8 +24,12 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
+Route.get('/locations/autocomplete', 'LocationsController.autocomplete')
+
 Route.resource('properties', 'PropertiesController').apiOnly().except(['update', 'destroy'])
 
-Route.resource('properties/:id/transactions', 'TransactionsController').apiOnly().only(['index'])
+Route.resource('properties/:id/transactions', 'TransactionsController')
+  .apiOnly()
+  .only(['index', 'store'])
 
-Route.get('/locations/autocomplete', 'LocationsController.autocomplete')
+Route.get('transaction-types', 'TransactionTypesController.index')
