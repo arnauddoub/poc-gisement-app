@@ -11,6 +11,32 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          primevue: [
+            'primevue/config',
+            'primevue/avatar',
+            'primevue/button',
+            'primevue/card',
+            'primevue/tag',
+            'primevue/tabmenu',
+            'primevue/progressbar',
+            'primevue/dialog',
+            'primevue/autocomplete',
+            'primevue/dropdown',
+            'primevue/inputnumber',
+            'primevue/inputtext',
+            'primevue/datatable',
+            'primevue/column',
+            'primevue/columngroup',
+            'primevue/row'
+          ]
+        }
+      }
+    }
+  },
   server: {
     proxy: {
       '/api': {
