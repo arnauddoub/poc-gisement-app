@@ -1,5 +1,9 @@
 {
   "name": "gisement-app",
   "private": true,
-  "type": "module"
+  "scripts": {
+    "build": "pnpm backend:build && pnpm frontend:build",
+    "backend:build": "cd packages/backend && pnpm build && cp .env build",
+    "frontend:build": "cd packages/frontend && pnpm build"
+  }
 }
