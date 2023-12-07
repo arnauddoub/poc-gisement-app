@@ -7,8 +7,8 @@ import useTransactionQuery from '../composables/useTransactionQuery'
 import BaseFormItem from '@/components/base/BaseFormItem.vue'
 
 const id = useRouteParams<number>('id')
-
 const { addTransaction } = useTransactionQuery()
+const { mutate, isPending, isSuccess } = addTransaction(id.value)
 
 const { data: transactionTypes } = useApi('/transaction-types').json()
 
@@ -18,8 +18,6 @@ const transaction = ref<TransactionCreate>({
   comment: null,
   amount: null
 })
-
-const { mutate, isPending, isSuccess } = addTransaction(id.value)
 
 function submit() {
   mutate(transaction.value)
