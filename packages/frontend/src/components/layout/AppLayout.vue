@@ -32,7 +32,7 @@ onClickOutside(appSidebarRef, () => {
   <div class="layout-container" :class="containerClass">
     <AppSidebar ref="appSidebarRef" />
 
-    <div class="layout-content-wrapper">
+    <div class="layout-content-wrapper p-3 md:p-7">
       <ProgressBar v-if="isFetching" mode="indeterminate" style="position: absolute; height: 4px; top: 0; left: 0; right: 0" />
 
       <AppTopbar />
@@ -91,8 +91,6 @@ onClickOutside(appSidebarRef, () => {
 }
 
 .layout-content-wrapper {
-  padding: 2rem;
-
   @media screen and (min-width: 992px) {
     & {
       margin-left: 18rem;

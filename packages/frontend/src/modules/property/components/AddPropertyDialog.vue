@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { PropertyCreate } from 'shared/types/Property'
 import { ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import { CATEGORY_LABELS, STATE_LABELS, TYPE_LABELS } from 'shared/constants/PropertyConstant'
 import { PropertyCategory } from 'shared/enums/PropertyCategory'
 import { PropertyType } from 'shared/enums/PropertyType'
@@ -13,8 +14,10 @@ import AutocompleteAddress from '@/components/AutocompleteAddress.vue'
 defineProps<{ modelValue: boolean }>()
 const emit = defineEmits<{ (e: 'update:modelValue', value: boolean): void }>()
 
+const router = useRouter()
+
 const { addProperty } = usePropertyQuery()
-const { mutate, isSuccess, isPending } = addProperty()
+const { mutate, isSuccess, isPending, data } = addProperty()
 
 const property = ref<PropertyCreate>({
   location: null,
@@ -30,7 +33,8 @@ function submit() {
 }
 
 watch(isSuccess, (value) => {
-  if (value) emit('update:modelValue', false)
+  if (!value) return
+  router.push({ name: 'properties.show', params: { id: data.value.id } })
 })
 </script>
 

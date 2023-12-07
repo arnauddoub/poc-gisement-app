@@ -6,6 +6,7 @@ import { STATUS_LABELS, CATEGORY_LABELS, STATE_LABELS, TYPE_LABELS } from 'share
 import usePropertyQuery from '../composables/usePropertyQuery'
 import BaseValue from '@/components/base/BaseValue.vue'
 import BaseHeading from '@/components/base/BaseHeading.vue'
+import { readableNumber } from 'shared/utils/formats'
 
 const route = useRoute()
 const router = useRouter()
@@ -33,7 +34,7 @@ const items = ref([
       <BaseValue label="Catégorie :" :value="property?.category && CATEGORY_LABELS[property.category]" />
       <BaseValue label="Type :" :value="property?.type && TYPE_LABELS[property.type]" />
       <BaseValue label="Surface :" :value="`${property?.surface} m²`" />
-      <BaseValue label="Prix :" :value="`${property?.price} €`" />
+      <BaseValue label="Prix :" :value="property?.price && `${readableNumber(property.price)} €`" />
     </div>
 
     <TabMenu
