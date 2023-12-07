@@ -1,16 +1,19 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator'
-import { PropertyCategory } from 'shared/enums/PropertyCategory'
-import { PropertyState } from 'shared/enums/PropertyState'
-import { PropertyType } from 'shared/enums/PropertyType'
+// import { PropertyCategory } from 'shared/enums/PropertyCategory'
+// import { PropertyState } from 'shared/enums/PropertyState'
+// import { PropertyType } from 'shared/enums/PropertyType'
 
 export default class PropertyStoreValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   public schema = schema.create({
-    state: schema.enum.optional(Object.values(PropertyState)),
-    category: schema.enum.optional(Object.values(PropertyCategory)),
-    type: schema.enum.optional(Object.values(PropertyType)),
+    state: schema.string(),
+    category: schema.string(),
+    type: schema.string(),
+    // state: schema.enum.optional(Object.values(PropertyState)),
+    // category: schema.enum.optional(Object.values(PropertyCategory)),
+    // type: schema.enum.optional(Object.values(PropertyType)),
     price: schema.number(),
     surface: schema.number(),
     location: schema.object().members({
