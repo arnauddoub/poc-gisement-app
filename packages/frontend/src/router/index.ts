@@ -28,7 +28,20 @@ const router = createRouter({
             {
               path: ':id',
               name: 'properties.show',
-              component: () => import('@/modules/property/views/PropertyView.vue')
+              component: () => import('@/modules/property/views/PropertyView.vue'),
+              redirect: { name: 'properties.show.summary' },
+              children: [
+                {
+                  path: '',
+                  name: 'properties.show.summary',
+                  component: () => import('@/modules/property/views/tabs/PropertySummaryTab.vue')
+                },
+                {
+                  path: 'transactions',
+                  name: 'properties.show.transactions',
+                  component: () => import('@/modules/property/views/tabs/PropertyTransactionsTab.vue')
+                }
+              ]
             }
           ]
         }
