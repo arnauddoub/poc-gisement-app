@@ -2,9 +2,10 @@ import { PropertyStatus } from 'shared/enums/PropertyStatus'
 import { PropertyState } from 'shared/enums/PropertyState'
 import { PropertyCategory } from 'shared/enums/PropertyCategory'
 import { PropertyType } from 'shared/enums/PropertyType'
-import Property from 'App/Models/Property'
 import Factory from '@ioc:Adonis/Lucid/Factory'
+import Property from '../../app/Models/Property'
 import LocationFactory from './LocationFactory'
+import TransactionFactory from './TransactionFactory'
 
 export default Factory.define(Property, ({ faker }) => {
   return {
@@ -17,4 +18,5 @@ export default Factory.define(Property, ({ faker }) => {
   }
 })
   .relation('location', () => LocationFactory)
+  .relation('transactions', () => TransactionFactory)
   .build()

@@ -26,4 +26,6 @@ Route.get('/', async () => {
 
 Route.resource('properties', 'PropertiesController').apiOnly().except(['update', 'destroy'])
 
+Route.resource('properties/:id/transactions', 'TransactionsController').apiOnly().only(['index'])
+
 Route.get('/locations/autocomplete', 'LocationsController.autocomplete')

@@ -1,13 +1,10 @@
 import { DateTime } from 'luxon'
-import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, HasOne, column, hasOne } from '@ioc:Adonis/Lucid/Orm'
 import Property from './Property'
 
 export default class Location extends BaseModel {
   @column({ isPrimary: true })
   public id: number
-
-  @column()
-  public propertyId: number
 
   @column()
   public label: string
@@ -33,6 +30,6 @@ export default class Location extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
 
-  @belongsTo(() => Property)
-  public property: BelongsTo<typeof Property>
+  @hasOne(() => Property)
+  public property: HasOne<typeof Property>
 }
