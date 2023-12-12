@@ -10,6 +10,7 @@ export default class extends BaseSchema {
       table.string('address').notNullable()
       table.string('city').notNullable()
       table.string('zip_code').notNullable()
+      table.string('insee_code').notNullable()
       table.float('latitude').notNullable()
       table.float('longitude').notNullable()
       table.timestamp('created_at', { useTz: true })

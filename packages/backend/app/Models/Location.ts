@@ -19,6 +19,9 @@ export default class Location extends BaseModel {
   public zipCode: string
 
   @column()
+  public inseeCode: string
+
+  @column()
   public latitude: number
 
   @column()

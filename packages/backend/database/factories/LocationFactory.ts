@@ -7,6 +7,7 @@ export default Factory.define(Location, ({ faker }) => {
     address: faker.location.streetAddress(),
     city: faker.location.city(),
     zipCode: faker.location.zipCode(),
+    inseeCode: faker.location.zipCode(),
     latitude: faker.location.latitude(),
     longitude: faker.location.longitude(),
   }
